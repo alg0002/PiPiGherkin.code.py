@@ -1,8 +1,6 @@
-#PiPi-GHERKIN - Raspberry Pi PICO
-import board
+
 from kmk.keys import KC
-from kmk.kmk_keyboard import KMKKeyboard
-from kmk.matrix import DiodeOrientation
+from kb import KMKKeyboard
 from kmk.hid import HIDModes
 from kmk.modules.layers import Layers
 from kmk.modules.modtap import ModTap
@@ -12,13 +10,6 @@ keyboard = KMKKeyboard()
 modtap = ModTap()
 layers_ext = Layers()
 keyboard.modules = [layers_ext, modtap]
-
-keyboard.col_pins = (board.GP2, board.GP3, board.GP4, board.GP5, board.GP6, board.GP7)
-keyboard.row_pins = (board.GP8, board.GP9, board.GP10, board.GP11, board.GP12)
-
-keyboard.diode_orientation = DiodeOrientation.COLUMNS
-
-keyboard.debug_enabled = False
 
 # Cleaner key names
 _______ = KC.TRNS
