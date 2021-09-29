@@ -1,4 +1,4 @@
-#PiPi-keyboard - Raspberry Pi PICO
+#PiPi-GHERKIN - Raspberry Pi PICO
 import board
 from kmk.keys import KC
 from kmk.kmk_keyboard import KMKKeyboard
@@ -21,6 +21,8 @@ keyboard.diode_orientation = DiodeOrientation.COLUMNS
 keyboard.debug_enabled = False
 
 # Cleaner key names
+_______ = KC.TRNS
+
 CTL_Z = KC.MT(KC.Z, KC.LCTRL)
 ALT_X = KC.MT(KC.X, KC.LALT)
 LT3_C = KC.LT(3, KC.C)
@@ -33,35 +35,41 @@ CTL_BS = KC.MT(KC.BSPC, KC.RCTRL)
 SFT_ESC = KC.MT(KC.ESC, KC.RSFT)
 
 keyboard.keymap = [
-    [#L0
+    [
+        # Layer 0
         KC.Q,    KC.W,    KC.E,    KC.R,    KC.T,    KC.Y,    KC.U,    KC.I,    KC.O,    KC.P,
         KC.A,    KC.S,    KC.D,    KC.F,    KC.G,    KC.H,    KC.J,    KC.K,    KC.L,    KC.ENT,
         CTL_Z,   ALT_X,   LT3_C,   LT4_V,   LT2_B,   LT1_N,   LT5_M,   ALT_SPC, CTL_BS,  SFT_ESC,
     ],
-    [#L1
+    [
+        # Layer 1
         KC.N1,   KC.N2,   KC.N3,   KC.N4,   KC.N5,   KC.N6,   KC.N7,   KC.N8,   KC.N9,   KC.N0,
         KC.F1,   KC.F2,   KC.F3,   KC.F4,   KC.F5,   KC.F6,   KC.F7,   KC.F8,   KC.F9,   KC.F10,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.DEL,  KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS,
+        _______, _______, _______, _______, KC.DEL,  _______, _______, _______, _______, _______,
     ],
-    [#L2
+    [
+        # Layer 2
         KC.EXLM, KC.AT,   KC.HASH, KC.DLR,  KC.PERC, KC.CIRC, KC.AMPR, KC.ASTR, KC.LPRN, KC.RPRN,
-        KC.F11,  KC.F12,  KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.GRV,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS,
+        KC.F11,  KC.F12,  _______, _______, _______, _______, _______, _______, _______, KC.GRV,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ],
-    [#L3
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.MINS, KC.EQL,  KC.LBRC, KC.RBRC, KC.BSLS,
-        KC.TAB,  KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.COMM, KC.DOT,  KC.SLSH, KC.SCLN, KC.QUOT,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.LEFT, KC.DOWN, KC.UP,   KC.RGHT,
+    [
+        # Layer 3
+        _______, _______, _______, _______, _______, KC.MINS, KC.EQL,  KC.LBRC, KC.RBRC, KC.BSLS,
+        KC.TAB,  _______, _______, _______, _______, KC.COMM, KC.DOT,  KC.SLSH, KC.SCLN, KC.QUOT,
+        _______, _______, _______, _______, _______, _______, KC.LEFT, KC.DOWN, KC.UP,   KC.RGHT,
     ],
-    [#L4
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.UNDS, KC.PLUS, KC.LCBR, KC.RCBR, KC.PIPE,
-        KC.TAB,  KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.LABK, KC.RABK, KC.QUES, KC.COLN, KC.DQUO,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.HOME, KC.PGDN, KC.PGUP, KC.END,
+    [
+        # Layer 4
+        _______, _______, _______, _______, _______, KC.UNDS, KC.PLUS, KC.LCBR, KC.RCBR, KC.PIPE,
+        KC.TAB,  _______, _______, _______, _______, KC.LABK, KC.RABK, KC.QUES, KC.COLN, KC.DQUO,
+        _______, _______, _______, _______, _______, _______, KC.HOME, KC.PGDN, KC.PGUP, KC.END,
     ],
-    [#L5
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS,
-        KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.TRNS, KC.MHEN, KC.TRNS, KC.HENK, KC.TRNS, KC.TRNS,
+    [
+        # Layer 5
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, KC.MHEN, _______, KC.HENK, _______, _______,
     ],
 ]
 
