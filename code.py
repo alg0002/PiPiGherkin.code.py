@@ -14,10 +14,6 @@ gherkin.modules.append(ModTap())
 gherkin.col_pins = (board.GP2, board.GP3, board.GP4, board.GP5, board.GP6, board.GP7)
 gherkin.row_pins = (board.GP8, board.GP9, board.GP10, board.GP11, board.GP12)
 
-##Rotate gherkin so USB on Right Side. Not needed if USB on Left Side.
-#gherkin.col_pins = tuple(reversed(gherkin.col_pins))
-#gherkin.row_pins = tuple(reversed(gherkin.row_pins))
-
 gherkin.diode_orientation = DiodeOrientation.COLUMNS
 
 gherkin.debug_enabled = False
